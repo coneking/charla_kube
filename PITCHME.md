@@ -18,7 +18,7 @@ Docker es un proyecto Opensource que permite desplegar aplicaciones en contenedo
 
 Los contenedores son una tecnología de virtualización que se basa en la ejecución de instancias de sistemas operativos desde un servidor (host) físico. Los contenedores utilizan las librerías, binarios, dependencias y recursos del servidor. Para su creación usan una imagen base.
 
-![contenedor](image=images/container.png)
+![contenedor](image=assets/images/container.png)
 
 
 +++
