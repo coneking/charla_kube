@@ -13,7 +13,7 @@ Docker es un proyecto Opensource que permite desplegar aplicaciones en contenedo
 
 +++
 @title[Ejemplo Docker]
-## Lógica Docker
+### Lógica Docker
 <p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/docker.png" width="600" /></p>
 
 ---
@@ -25,8 +25,7 @@ Es una tecnología de virtualización que se basa en la ejecución de instancias
 +++
 @title[Ejemplo Contenedor]
 ### Ejemplo de contenedor
-![](images/container.png =300x)
-
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/container.png" width="600" /></p>
 
 +++
 @title[Transición]
