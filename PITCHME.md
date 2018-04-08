@@ -6,7 +6,7 @@ Pero antes...
 
 ---
 @title[Docker]
-# ¿Que es Docker?
+## ¿Que es Docker?
 
 Docker es un proyecto Opensource que permite desplegar aplicaciones en contenedores. Gestiona la creación y administración de contenedores.
 
@@ -18,7 +18,7 @@ Docker es un proyecto Opensource que permite desplegar aplicaciones en contenedo
 
 ---
 @title[Listado]
-# Contenedores
+## Contenedores
 
 Es una tecnología de virtualización que se basa en la ejecución de instancias de sistemas operativos desde un servidor. Los contenedores utilizan las librerías, binarios, dependencias y recursos del servidor. Para su creación usan una imagen base.
 
