@@ -32,7 +32,7 @@ Es una tecnología de virtualización que se basa en la ejecución de instancias
 @title[Conceptos]
 ## Componentes
 
-- Docker Daemon
+- Docker Daemon |
 - Docker Client |
 - Docker Image |
 - Docker Hub |
@@ -42,17 +42,15 @@ Es una tecnología de virtualización que se basa en la ejecución de instancias
 - Docker Swarm |
 
 
+---
+@title[Ejemplo]
+
+Ejemplo práctico
+
+```git
 
 
-
-
-
-
-+++
-@title[Transición]
-- Primera opción
-- Segunda opción |
-- Tercera opción |
+```
 
 +++
 @title[Bandera]
