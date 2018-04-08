@@ -26,6 +26,8 @@ Es una tecnología de virtualización que se basa en la ejecución de instancias
 ### Ejemplo de contenedor
 <p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/container.png" width="600" /></p>
 
+[DockerHub](https://hub.docker.com/)
+
 ---
 @title[Conceptos]
 ## Componentes
