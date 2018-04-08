@@ -13,7 +13,7 @@ Docker es un proyecto Opensource que permite desplegar aplicaciones en contenedo
 +++
 @title[Estructura Docker]
 ### Estructura Docker
-<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/vm-vs-container.png" width="800" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/docker.png" width="600" /></p>
 
 ---
 @title[Contenedores]
@@ -27,8 +27,14 @@ Es una tecnología de virtualización que se basa en la ejecución de instancias
 <p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/container.png" width="600" /></p>
 [DockerHub](https://hub.docker.com/)
 
+
++++
+@title[Contenedor vs Virtual Machine]
+### Contenedor vs Máquinas Virtuales
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/vm-vs-container.png" width="800" /></p>
+
 ---
-@title[Conceptos]
+@title[Componentes]
 ## Componentes
 
 - Docker Daemon |
@@ -40,10 +46,14 @@ Es una tecnología de virtualización que se basa en la ejecución de instancias
 - Docker Registry |
 - Docker Swarm |
 
+[Más información](https://github.com/coneking/docker#componentes-de-docker) |
+
 ---
 @title[Ejemplo]
 
 ## Ejemplo práctico
+
+Creación de contenedor
 
 ```git
 
