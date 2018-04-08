@@ -25,7 +25,7 @@ Es una tecnología de virtualización que se basa en la ejecución de instancias
 +++
 @title[Ejemplo Contenedor]
 ### Ejemplo de contenedor
-![caca](images/container.png)
+![](images/container.png =500x)
 
 
 +++
