@@ -64,3 +64,5 @@ Creación de Contenedor
 
 Note:
 Esto es un ejemplo solamente.
+docker run -it nginex.
+Para salir de un contenedor; Ctrl + P + Q.
