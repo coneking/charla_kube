@@ -60,7 +60,7 @@ Más información sobre [Componentes Docker](https://github.com/coneking/docker#
 
 ## Ejemplo práctico
 
-Creación de contenedor
+Creación de @color[blue](contenedor)
 
 ```git
 
