@@ -61,3 +61,6 @@ Más información sobre [Componentes Docker](https://github.com/coneking/docker#
 ## Ejemplo práctico
 
 Creación de Contenedor
+
+Note:
+Esto es un ejemplo solamente.
