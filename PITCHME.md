@@ -23,7 +23,7 @@ Docker es un proyecto Opensource que permite desplegar aplicaciones en contenedo
 
 <br>
 
-Es una tecnología de virtualización que se basa en la ejecución de instancias de sistemas operativos desde un servidor. Los contenedores utilizan las librerías, binarios, dependencias y recursos del servidor. Para su creación usan una imagen base.
+Es una tecnología de virtualización que se basa en la ejecución de instancias de sistemas operativos desde un servidor. Los contenedores utilizan binarios, dependencias y recursos de este servidor. Para su creación usan una imagen base.
 
 +++
 @title[Ejemplo Contenedor]
@@ -60,10 +60,4 @@ Más información sobre [Componentes Docker](https://github.com/coneking/docker#
 
 ## Ejemplo práctico
 
-Creación de @color[blue](contenedor)
-
-```git
-
-
-```
-
+Creación de Contenedor
