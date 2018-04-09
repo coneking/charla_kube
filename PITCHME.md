@@ -64,5 +64,10 @@ Creación de Contenedor
 
 Note:
 Esto es un ejemplo solamente.
-docker run -it nginex.
-Para salir de un contenedor; Ctrl + P + Q.
+
+<br>
+
+Contenedor Nginx: <br>
+docker container run --publish 81:80 nginx
+<br>
+Para salir de un contenedor: <br> Ctrl + P + Q.
