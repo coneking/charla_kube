@@ -41,8 +41,6 @@ Es una tecnología de virtualización que se basa en la ejecución de instancias
 @title[Componentes]
 ## Componentes
 
-- Docker Daemon |
-- Docker Client |
 - Docker Image |
 - Docker Hub |
 - Dockerfile |
