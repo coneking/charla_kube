@@ -1,4 +1,8 @@
 ---
+@title[Inicio]
+# Capacitación Kubernetes
+
+---
 @title[Docker Hub]
 ## Docker Hub
 
@@ -21,7 +25,7 @@ richarvey/nginx-php-fpm   Container running Nginx + PHP-FPM capable ...   544   
 ```
 
 
----
++++
 @title[Descargar imagen]
 ## Descargar una imagen
 
@@ -38,7 +42,7 @@ Status: Downloaded newer image for docker.io/httpd:latest
 ```
 >**Nota:** Si no se especifica la versión de la imagen, se descargará la última versión (latest).
 
----
++++
 @title[Iniciar contenedor]
 ## Iniciar un contendor
 
@@ -49,7 +53,7 @@ $ docker container run -d httpd
 87595b724f012b29857a55283383c4214e07188dfe6a06553cc329282c336f0e
 ```
 
----
++++
 @title[Eliminar contenedor]
 ## Eliminar un contenedor
 
@@ -65,7 +69,7 @@ $ docker container rm 87595b7
 ```
 >**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente. 
 
-+++
+---
 @title[Práctica]
 # Práctica
 
@@ -82,7 +86,7 @@ Para crear una imagen podemos hacerlo basándonos en un contenedor que hayamos i
 También podemos crear una imagen en base a un archivo (Dockerfile).
 
 +++
-@title[Creando contenedor1]
+@title[Creando imagen1]
 ## Creando imagen desde contenedor
 
 Debemos tener un contenedor iniciado y modificarlo.
@@ -96,8 +100,17 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 $ docker commit mi_apache mi_imagen
 sha256:9f622d201933a6197310aa0995e746b3bbd736e04f186c39b1adb4b28494f316
 ```
-
 ---
+@title[Práctica2]
+# Práctica
+
+- Iniciar un contenedor apache |
+- Editar el contenedor |
+- Crear una imagen |
+- Iniciar un contenedor con la nueva imagen |
+- Eliminar el contenedor y la imagen |
+---
+
 @title[Dockerfile]
 ## Dockerfile
 
@@ -132,7 +145,7 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 ```
 
 +++
-@title[Creando contenedor2]
+@title[Creando imagen2]
 
 ## Crear imagen desde Dockerfile
 
@@ -143,16 +156,6 @@ $ docker build -t nombre_de_la_imagen:version .
 ```
 
 ---
-@title[Práctica2]
-# Práctica
-
-- Iniciar un contenedor apache |
-- Editar el contenedor |
-- Crear una imagen |
-- Iniciar un contenedor con la nueva imagen |
-- Eliminar el contenedor y la imagen |
-
-+++
 @title[Práctica3]
 # Práctica Dockerfile
 
