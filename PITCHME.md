@@ -1,4 +1,8 @@
 ---
+@title[Inicio]
+# Capacitación Kubernetes
+
+---
 @title[Docker Hub]
 ## Docker Hub
 
@@ -96,8 +100,17 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 $ docker commit mi_apache mi_imagen
 sha256:9f622d201933a6197310aa0995e746b3bbd736e04f186c39b1adb4b28494f316
 ```
-
 ---
+@title[Práctica2]
+# Práctica
+
+- Iniciar un contenedor apache |
+- Editar el contenedor |
+- Crear una imagen |
+- Iniciar un contenedor con la nueva imagen |
+- Eliminar el contenedor y la imagen |
+---
+
 @title[Dockerfile]
 ## Dockerfile
 
@@ -141,16 +154,6 @@ Se deben definir los pasos para la imagen en un archivo llamado `Dockerfile`. Po
 ```
 $ docker build -t nombre_de_la_imagen:version
 ```
-
----
-@title[Práctica2]
-# Práctica
-
-- Iniciar un contenedor apache |
-- Editar el contenedor |
-- Crear una imagen |
-- Iniciar un contenedor con la nueva imagen |
-- Eliminar el contenedor y la imagen |
 
 ---
 @title[Práctica3]
