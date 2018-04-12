@@ -139,7 +139,7 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 Se deben definir los pasos para la imagen en un archivo llamado `Dockerfile`. Posteriormente se crea la imagen de la siguiente manera:
 
 ```
-$ docker build -t nombre_de_la_imagen:version
+$ docker build -t nombre_de_la_imagen:version .
 ```
 
 ---
