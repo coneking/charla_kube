@@ -2,7 +2,8 @@
 @title[Docker Hub]
 ## Docker Hub
 
-Es el repositorio por defecto de imágenes para contenedores Docker https://hub.docker.com
+Es el repositorio por defecto de imágenes para contenedores Docker https://hub.docker.com.
+
 Se pueden encontrar imágenes tanto oficiales como no oficiales y a través de un registro gratuito podemos aportar a la comunidad.
 
 ---
@@ -69,7 +70,7 @@ $ docker container rm 87595b7
 # Práctica
 
 - Buscar una imagen |
-- Iniciar un contenedor pasando parámetros |
+- Descargar e iniciar un contenedor con parámetros |
 - Verificar su estado y si es visible (web) |
 - Eliminar solo el contenedor |
 
@@ -141,8 +142,6 @@ Se deben definir los pasos para la imagen en un archivo llamado `Dockerfile`. Po
 $ docker build -t nombre_de_la_imagen:version
 ```
 
->**Nota:** Si el archivo creado tiene un nombre distinto a Dockerfile, se puede agregar el parámetro `-f` e indicar el nombre del archivo.
-
 ---
 @title[Práctica2]
 # Práctica
@@ -151,13 +150,18 @@ $ docker build -t nombre_de_la_imagen:version
 - Editar el contenedor |
 - Crear una imagen |
 - Iniciar un contenedor con la nueva imagen |
-- Eliminar el contenedor y la imagen|
+- Eliminar el contenedor y la imagen |
 
 +++
 @title[Práctica3]
 # Práctica Dockerfile
 
 - Crear un archivo Dockerfile con sus pasos |
-- Crear una imagen (Dockerfile)
+- Crear una imagen (Dockerfile) |
 - Iniciar un contenedor con la nueva imagen |
-- Eliminar el contenedor y la imagen|
+- Eliminar el contenedor y la imagen |
+
+---
+@title[Gracias]
+
+# GRACIAS
