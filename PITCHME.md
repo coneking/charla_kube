@@ -1,72 +1,170 @@
 ---
-@title[Capacitación]
+@title[Inicio]
 # Capacitación Kubernetes
 
-Pero antes...
+---
+@title[Docker Hub]
+## Docker Hub
+
+Es el repositorio por defecto de imágenes para contenedores Docker https://hub.docker.com.
+
+Se pueden encontrar imágenes tanto oficiales como no oficiales y a través de un registro gratuito podemos aportar a la comunidad.
 
 ---
-@title[Docker]
-## ¿Que es Docker?
+@title[Buscar imágenes]
+## ¿Cómo buscar imágenes?
 
-<br>
+Mediante línea de comando se ejecuta lo siguiente:
 
-Docker es un proyecto Opensource que permite desplegar aplicaciones en contenedores. Gestiona la creación y administración de contenedores.
-
-+++
-@title[Estructura Docker]
-#### Estructura Docker
-<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/docker.png" width="600" /></p>
-
----
-@title[Contenedores]
-## Contenedores
-
-<br>
-
-Es una tecnología de virtualización que se basa en la ejecución de instancias de sistemas operativos desde un servidor. Los contenedores utilizan binarios, dependencias y recursos de este servidor. Para su creación usan una imagen base.
-
-+++
-@title[Ejemplo Contenedor]
-#### Ejemplo de contenedor
-<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/container.png" width="500" /></p>
-[DockerHub](https://hub.docker.com/)
+```
+$ docker search nginx
+NAME                      DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+nginx                     Official build of Nginx.                        8341      [OK]
+jwilder/nginx-proxy       Automated Nginx reverse proxy for docker c...   1314                 [OK]
+richarvey/nginx-php-fpm   Container running Nginx + PHP-FPM capable ...   544                  [OK]
+```
 
 
 +++
-@title[Contenedor vs Virtual Machine]
-#### Contenedor vs Máquinas Virtuales
-<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/vm-vs-container.png" width="800" /></p>
+@title[Descargar imagen]
+## Descargar una imagen
 
----
-@title[Componentes]
-## Componentes
+Para descargar una imagen ejecutamos lo siguiente:
 
-- Docker Image |
-- Docker Hub |
-- Dockerfile |
-- Docker Container |
-- Docker Registry |
-- Docker Swarm |
+```
+$ docker image pull httpd
+Using default tag: latest
+Trying to pull repository docker.io/library/httpd ...
+latest: Pulling from docker.io/library/httpd
+f2b6b4884fc8: Pull complete
+Digest: sha256:b54c05d62f0af6759c0a9b53a9f124ea2ca7a631dd7b5730bca96a2245a34f9d
+Status: Downloaded newer image for docker.io/httpd:latest
+```
+>**Nota:** Si no se especifica la versión de la imagen, se descargará la última versión (latest).
 
 +++
-@title[Información]
+@title[Iniciar contenedor]
+## Iniciar un contendor
 
-Más información sobre [Componentes Docker](https://github.com/coneking/docker#componentes-de-docker)
+Para iniciar un contendor y mantenerlo en ejecución ejecutamos lo siguiente:
+
+```
+$ docker container run -d httpd
+87595b724f012b29857a55283383c4214e07188dfe6a06553cc329282c336f0e
+```
+
++++
+@title[Eliminar contenedor]
+## Eliminar un contenedor
+
+Para eliminar un contenedor, debe estar detenido.
+Ejecutamos lo siguiente:
+
+```
+$ docker container stop 87595b7
+87595b7
+
+$ docker container rm 87595b7
+87595b7
+```
+>**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente. 
 
 ---
-@title[Ejemplo]
+@title[Práctica]
+# Práctica
 
-## Ejemplo práctico
+- Buscar una imagen |
+- Descargar e iniciar un contenedor con parámetros |
+- Verificar su estado y si es visible (web) |
+- Eliminar solo el contenedor |
 
-Creación de Contenedor
+---
+@title[Crear imagen]
+## Crear una imagen
 
-Note:
-Esto es un ejemplo solamente.
+Para crear una imagen podemos hacerlo basándonos en un contenedor que hayamos iniciado, ajustándolo a nuestra necesidad.
+También podemos crear una imagen en base a un archivo (Dockerfile).
 
-<br>
++++
+@title[Creando imagen1]
+## Creando imagen desde contenedor
 
-Contenedor Nginx: <br>
-docker container run --publish 81:80 nginx
-<br>
-Para salir de un contenedor: <br> Ctrl + P + Q.
+Debemos tener un contenedor iniciado y modificarlo.
+Posteriormente ejecutamos lo siguiente:
 
+```
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+836d31ee29e2        httpd               "httpd-foreground"       8 minutes ago       Up 8 minutes        0.0.0.0:82->80/tcp     mi_apache
+
+$ docker commit mi_apache mi_imagen
+sha256:9f622d201933a6197310aa0995e746b3bbd736e04f186c39b1adb4b28494f316
+```
+---
+@title[Práctica2]
+# Práctica
+
+- Iniciar un contenedor apache |
+- Editar el contenedor |
+- Crear una imagen |
+- Iniciar un contenedor con la nueva imagen |
+- Eliminar el contenedor y la imagen |
+---
+
+@title[Dockerfile]
+## Dockerfile
+
+Dockerfile define varios pasos que se requieren para la creación de una imagen.
+Estos pasos se añaden a un archivo de texto, llamado de preferencia, Dockerfile.
+
++++
+@title[Ejemplo Dockerfile]
+
+### Ejemplo de archivo Dockerfile
+
+```
+# FROM Indica qué imagen base se usará
+FROM ubuntu:16.04
+
+# Se dejan los datos del creador de la imagen
+MAINTAINER Nombre Apellido version: 1 correo@dominio.com
+
+# Ejecuta tareas antes de crear la imagen
+RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Asignación de variables
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+
+# Puerto o rango de puertos que se expondrán en la imágen
+EXPOSE 80
+
+# Comandos que se ejecutarán una vez se creé el contenedor
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+```
+
++++
+@title[Creando imagen2]
+
+## Crear imagen desde Dockerfile
+
+Se deben definir los pasos para la imagen en un archivo llamado `Dockerfile`. Posteriormente se crea la imagen de la siguiente manera:
+
+```
+$ docker build -t nombre_de_la_imagen:version .
+```
+
+---
+@title[Práctica3]
+# Práctica Dockerfile
+
+- Crear un archivo Dockerfile con sus pasos |
+- Crear una imagen (Dockerfile) |
+- Iniciar un contenedor con la nueva imagen |
+- Eliminar el contenedor y la imagen |
+
+---
+@title[Gracias]
+
+# GRACIAS
