@@ -1,35 +1,31 @@
 ---
 @title[Inicio]
-# Capacitación Kubernetes
+![k8s](images/kubernetes.png)
 
 ---
-@title[Docker Hub]
-## Docker Hub
+@title[Introducción Kubernetes]
+## ¿Qué es Kubernetes?
 
-Es el repositorio por defecto de imágenes para contenedores Docker https://hub.docker.com.
-
-Se pueden encontrar imágenes tanto oficiales como no oficiales y a través de un registro gratuito podemos aportar a la comunidad.
+También conocido como **k8s**, es una plataforma Open-Source que permite la administración de contenedores (orquestador).
+Se encarga del despliegue, la mantención y la escalabilidad de las aplicaciones.
+[Kubernetes](https://kubernetes.io/docs/concepts/)
 
 ---
-@title[Buscar imágenes]
-## ¿Cómo buscar imágenes?
+@title[Historia]
+![Google](images/google.png
 
-Mediante línea de comando se ejecuta lo siguiente:
+Desarrollado originamente por Google y liberado en el 2015 es actualemte utilziado por grandes compañías como Redhat, IBM, CoreOS, SAP.
 
-```
-$ docker search nginx
-NAME                      DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-nginx                     Official build of Nginx.                        8341      [OK]
-jwilder/nginx-proxy       Automated Nginx reverse proxy for docker c...   1314                 [OK]
-richarvey/nginx-php-fpm   Container running Nginx + PHP-FPM capable ...   544                  [OK]
-```
+---
+@title[Conceptos]
+## Conceptos
 
 
 +++
-@title[Descargar imagen]
-## Descargar una imagen
+@title[Namespace]
+## Namespace
 
-Para descargar una imagen ejecutamos lo siguiente:
+Son espacios de trabajo para
 
 ```
 $ docker image pull httpd
