@@ -1,34 +1,57 @@
----
+---?image=images/kubernetes.png&size=auto
 @title[Inicio]
-![k8s](images/kubernetes.png)
 
 ---
 @title[Introducción Kubernetes]
 ## ¿Qué es Kubernetes?
 
 También conocido como **k8s**, es una plataforma Open-Source que permite la administración de contenedores (orquestador).
+<br>
 Se encarga del despliegue, la mantención y la escalabilidad de las aplicaciones.
 [Kubernetes](https://kubernetes.io/docs/concepts/)
 
 ---
 @title[Historia]
-![Google](images/google.png
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/googlelogo.png" width="500" /></p>
 
-Desarrollado originamente por Google y liberado en el 2015 es actualemte utilziado por grandes compañías como Redhat, IBM, CoreOS, SAP.
+Desarrollado originalmente por Google en 2014 y liberado en el 2015 para la Cloud Native Computing Foundation es actualmente utilizado por grandes compañías como **Redhat**, **IBM**, **CoreOS**, **SAP** entre otras.
+
+---
+@title[Kubectl]
+## Comando Kubectl
+
+Para administrar Kubernetes utilizamos el comando **kubectl**, el cual interactúa con el cluster Kubernetes.
+<br>
+
+**Sintáxis:**
+```
+kubectl [command] [TYPE] [NAME] [flags]
+```
+
++++
+@title[Instalación]
+## Instalación Kubectl
+
 
 ---
 @title[Conceptos]
 ## Conceptos
 
-- NameSpace |
-- Iniciar un contenedor |
-- Eliminar solo el contenedor |
+- Namespace |
+- Pod |
+- Service |
+- Deployment |
+- PV y PVC |
+- ReplicaSets |
+- Ingress |
 
 +++
 @title[Namespace]
 ## Namespace
 
-Son espacios de trabajo para
+Son áreas de trabajo que agrupan diferentes objetos como, deployment, services, ingress, etc.
+<br>
+Estas áreas de trabajo son independientes entre si.
 
 ```
 $ docker image pull httpd
