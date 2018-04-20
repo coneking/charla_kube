@@ -112,7 +112,7 @@ $ docker container run -d httpd
 @title[Service]
 ## Service
 
-Un Grupo de pod a los que se les define un concepto, con la logica de acceder a los mismos
+Un grupo de pod a los que se les define un concepto, con la logica de acceder a los mismos.
 
 ```
 $ docker container stop 87595b7
@@ -121,13 +121,12 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Nota 
 
 +++
 @title[Deployment]
 ## Deployment
 
-Es el controlador de implementaciones esta declara actualizaciones declaradas para Pods  y ReplicaSets.
+Es el controlador de implementaciones, esta declara actualizaciones para Pods  y ReplicaSets.
 
 ```
 $ docker container stop 87595b7
@@ -136,14 +135,13 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Nota
 
 +++
 @title[PV y PVC]
-## PV yPVC
+## PV y PVC
 
 **PV** Volumen Persistente , este define las asignaciones de almacenamiento, se puede divir en sub volumenes.
-PVC Reivindicaciones de Volumen persisitente, un espacio de un PV que solicita ser asignado para un o mas pods.
+**PVC** Reivindicaciones de Volumen persisitente, un espacio de un PV que solicita ser asignado para un o mas pods.
 
 ```
 $ docker container stop 87595b7
@@ -167,7 +165,6 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Nota
 
 +++
 @title[Ingress]
@@ -182,7 +179,6 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Nota
 
 ---
 @title[Práctica]
