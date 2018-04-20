@@ -99,9 +99,9 @@ kube-system   Active    43d
 
 +++
 @title[Iniciar contenedor]
-## Iniciar un contendor
+## Pod
 
-Para iniciar un contendor y mantenerlo en ejecución ejecutamos lo siguiente:
+Un Pod es la unidad mas pequeña que se puede desplegar y puede ser modificada o progeamada desde Kubernetes.
 
 ```
 $ docker container run -d httpd
