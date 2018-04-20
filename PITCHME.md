@@ -122,7 +122,7 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente. 
+>**Nota:** Nota 
 
 +++
 @title[Deployment]
@@ -138,14 +138,14 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente.
+>**Nota:** Nota
 
 +++
 @title[PV y PVC]
 ## Service
 
-Para eliminar un contenedor, debe estar detenido.
-Ejecutamos lo siguiente:
+PV Volumen Persistente , este define las asignaciones de almacenamiento, se puede divir en sub volumenes.
+PVC Reivindicaciones de Volumen persisitente, un espacio de un PV que solicita ser asignado para un o mas pods.
 
 ```
 $ docker container stop 87595b7
@@ -154,7 +154,7 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente.
+>**Nota:** Nota
 
 +++
 @title[PeplicaSets]
@@ -170,7 +170,7 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente.
+>**Nota:** Nota
 
 +++
 @title[Ingress]
@@ -186,7 +186,7 @@ $ docker container stop 87595b7
 $ docker container rm 87595b7
 87595b7
 ```
->**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente.
+>**Nota:** Nota
 
 ---
 @title[Práctica]
