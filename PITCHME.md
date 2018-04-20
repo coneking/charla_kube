@@ -8,6 +8,7 @@
 También conocido como **k8s**, es una plataforma Open-Source que permite la administración de contenedores (orquestador).
 <br>
 Se encarga del despliegue, la mantención y la escalabilidad de las aplicaciones.
+<br>
 [Kubernetes](https://kubernetes.io/docs/concepts/)
 
 ---
@@ -28,10 +29,33 @@ Para administrar Kubernetes utilizamos el comando **kubectl**, el cual interact�
 kubectl [command] [TYPE] [NAME] [flags]
 ```
 
+<br>
+
+**Ejemplo:**
+```
+$ kubectl get nodes
+NAME           STATUS                     ROLES     AGE       VERSION
+nodo1          Ready,SchedulingDisabled   <none>    20d       v1.8.0
+nodo2          Ready                      <none>    20d       v1.8.0
+nodo3          Ready                      <none>    20d       v1.8.0
+```
+
 +++
 @title[Instalación]
-## Instalación Kubectl
+### Instalación Kubectl Windows (chocolatey)
 
+A través de `chocolatey` ([instalación chocolatey](https://chocolatey.org/install)) ejecutar desde PowerShell o CMD:
+
+```
+choco install kubernetes-cli
+```
+
+<br>
+
+Revisar la versión de `kubectl`:
+```
+kubectl version
+```
 
 ---
 @title[Conceptos]
