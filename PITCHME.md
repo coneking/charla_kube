@@ -98,7 +98,7 @@ kube-system   Active    43d
 ```
 
 +++
-@title[Iniciar contenedor]
+@title[Pod]
 ## Pod
 
 Un Pod es la unidad mas pequeña que se puede desplegar y puede ser modificada o programada desde Kubernetes.
@@ -109,8 +109,8 @@ $ docker container run -d httpd
 ```
 
 +++
-@title[Eliminar contenedor]
-## Eliminar un contenedor
+@title[Service]
+## Service
 
 Para eliminar un contenedor, debe estar detenido.
 Ejecutamos lo siguiente:
@@ -123,6 +123,70 @@ $ docker container rm 87595b7
 87595b7
 ```
 >**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente. 
+
++++
+@title[Deployment]
+## Deployment
+
+Para eliminar un contenedor, debe estar detenido.
+Ejecutamos lo siguiente:
+
+```
+$ docker container stop 87595b7
+87595b7
+
+$ docker container rm 87595b7
+87595b7
+```
+>**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente.
+
++++
+@title[PV y PVC]
+## Service
+
+Para eliminar un contenedor, debe estar detenido.
+Ejecutamos lo siguiente:
+
+```
+$ docker container stop 87595b7
+87595b7
+
+$ docker container rm 87595b7
+87595b7
+```
+>**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente.
+
++++
+@title[PeplicaSets]
+## PeplicaSets
+
+Para eliminar un contenedor, debe estar detenido.
+Ejecutamos lo siguiente:
+
+```
+$ docker container stop 87595b7
+87595b7
+
+$ docker container rm 87595b7
+87595b7
+```
+>**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente.
+
++++
+@title[Ingress]
+## Ingress
+
+Para eliminar un contenedor, debe estar detenido.
+Ejecutamos lo siguiente:
+
+```
+$ docker container stop 87595b7
+87595b7
+
+$ docker container rm 87595b7
+87595b7
+```
+>**Nota:** Para iniciar, detener, eliminar, etc. Se usa el id del contenedor o el nombre que se le asigna automáticamente.
 
 ---
 @title[Práctica]
