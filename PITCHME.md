@@ -12,7 +12,7 @@ Se encarga del despliegue, la mantención y la escalabilidad de las aplicaciones
 
 ---
 @title[Historia]
-![Google](images/google.png
+![Google](images/googlelogo.png)
 
 Desarrollado originamente por Google y liberado en el 2015 es actualemte utilziado por grandes compañías como Redhat, IBM, CoreOS, SAP.
 
