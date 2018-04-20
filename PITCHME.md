@@ -112,8 +112,7 @@ $ docker container run -d httpd
 @title[Service]
 ## Service
 
-Para eliminar un contenedor, debe estar detenido.
-Ejecutamos lo siguiente:
+Un Grupo de pod a los que se les define un concepto, con la logica de acceder a los mismos
 
 ```
 $ docker container stop 87595b7
@@ -128,8 +127,7 @@ $ docker container rm 87595b7
 @title[Deployment]
 ## Deployment
 
-Para eliminar un contenedor, debe estar detenido.
-Ejecutamos lo siguiente:
+Es el controlador de implementaciones esta declara actualizaciones declaradas para Pods  y ReplicaSets.
 
 ```
 $ docker container stop 87595b7
@@ -142,9 +140,9 @@ $ docker container rm 87595b7
 
 +++
 @title[PV y PVC]
-## Service
+## PV yPVC
 
-PV Volumen Persistente , este define las asignaciones de almacenamiento, se puede divir en sub volumenes.
+**PV** Volumen Persistente , este define las asignaciones de almacenamiento, se puede divir en sub volumenes.
 PVC Reivindicaciones de Volumen persisitente, un espacio de un PV que solicita ser asignado para un o mas pods.
 
 ```
@@ -160,8 +158,7 @@ $ docker container rm 87595b7
 @title[PeplicaSets]
 ## PeplicaSets
 
-Para eliminar un contenedor, debe estar detenido.
-Ejecutamos lo siguiente:
+Es un controldor de replicación.
 
 ```
 $ docker container stop 87595b7
@@ -176,8 +173,7 @@ $ docker container rm 87595b7
 @title[Ingress]
 ## Ingress
 
-Para eliminar un contenedor, debe estar detenido.
-Ejecutamos lo siguiente:
+Es el objeto API que gestiona es acceso externo a los servicios de un cluster.
 
 ```
 $ docker container stop 87595b7
