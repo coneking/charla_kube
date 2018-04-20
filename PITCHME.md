@@ -101,7 +101,7 @@ kube-system   Active    43d
 @title[Iniciar contenedor]
 ## Pod
 
-Un Pod es la unidad mas pequeña que se puede desplegar y puede ser modificada o progeamada desde Kubernetes.
+Un Pod es la unidad mas pequeña que se puede desplegar y puede ser modificada o programada desde Kubernetes.
 
 ```
 $ docker container run -d httpd
