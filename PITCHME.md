@@ -20,6 +20,9 @@ Desarrollado originamente por Google y liberado en el 2015 es actualemte utilzia
 @title[Conceptos]
 ## Conceptos
 
+- NameSpace |
+- Iniciar un contenedor |
+- Eliminar solo el contenedor |
 
 +++
 @title[Namespace]
