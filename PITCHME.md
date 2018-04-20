@@ -1,6 +1,5 @@
----
+---?image=images/kubernetes.png&size=auto
 @title[Inicio]
-<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/kubernetes.png" width="500" /></p>
 
 ---
 @title[Introducción Kubernetes]
