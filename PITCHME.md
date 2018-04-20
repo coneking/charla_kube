@@ -1,6 +1,6 @@
 ---
 @title[Inicio]
-![k8s](images/kubernetes.png)
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/kubernetes.png" width="500" /></p>
 
 ---
 @title[Introducción Kubernetes]
@@ -12,9 +12,9 @@ Se encarga del despliegue, la mantención y la escalabilidad de las aplicaciones
 
 ---
 @title[Historia]
-![Google](images/googlelogo.png)
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/googlelogo.png" width="500" /></p>
 
-Desarrollado originamente por Google y liberado en el 2015 es actualemte utilziado por grandes compañías como Redhat, IBM, CoreOS, SAP.
+Desarrollado originalmente por Google en 2014 y liberado en el 2015 para la Cloud Native Computing Foundation es actualmente utilizado por grandes compañías como Redhat, IBM, CoreOS, SAP.
 
 ---
 @title[Conceptos]
