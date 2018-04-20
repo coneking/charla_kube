@@ -29,9 +29,11 @@ Para administrar Kubernetes utilizamos el comando **kubectl**, el cual interact�
 kubectl [command] [TYPE] [NAME] [flags]
 ```
 
-<br>
++++
+@title[Ejemplo Kubectl]
+## Ejemplo
 
-**Ejemplo:**
+Listar los nodos del cluster Kubernetes:
 ```
 $ kubectl get nodes
 NAME           STATUS                     ROLES     AGE       VERSION
@@ -40,12 +42,11 @@ nodo2          Ready                      <none>    20d       v1.8.0
 nodo3          Ready                      <none>    20d       v1.8.0
 ```
 
-+++
-@title[Instalación]
+---
+@title[Instalación1]
 ### Instalación Kubectl Windows (chocolatey)
 
-A través de `chocolatey` ([instalación chocolatey](https://chocolatey.org/install)) ejecutar desde PowerShell o CMD:
-
+Ejecutar desde PowerShell o CMD:
 ```
 choco install kubernetes-cli
 ```
@@ -55,6 +56,17 @@ choco install kubernetes-cli
 Revisar la versión de `kubectl`:
 ```
 kubectl version
+```
+
+([instalación chocolatey](https://chocolatey.org/install))
+
++++
+@title[Instalación2]
+### Instalación Kubectl Windows (binario)
+
+Descargar el binario kubectl.exe
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/windows/amd64/kubectl.exe
 ```
 
 ---
@@ -78,15 +90,12 @@ Son áreas de trabajo que agrupan diferentes objetos como, deployment, services,
 Estas áreas de trabajo son independientes entre si.
 
 ```
-$ docker image pull httpd
-Using default tag: latest
-Trying to pull repository docker.io/library/httpd ...
-latest: Pulling from docker.io/library/httpd
-f2b6b4884fc8: Pull complete
-Digest: sha256:b54c05d62f0af6759c0a9b53a9f124ea2ca7a631dd7b5730bca96a2245a34f9d
-Status: Downloaded newer image for docker.io/httpd:latest
+$ kubectl get namespaces
+NAME          STATUS    AGE
+default       Active    43d
+kube-public   Active    43d
+kube-system   Active    43d
 ```
->**Nota:** Si no se especifica la versión de la imagen, se descargará la última versión (latest).
 
 +++
 @title[Iniciar contenedor]
