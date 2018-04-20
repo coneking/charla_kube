@@ -8,8 +8,6 @@
 También conocido como **k8s**, es una plataforma Open-Source que permite la administración de contenedores (orquestador).
 <br>
 Se encarga del despliegue, la mantención y la escalabilidad de las aplicaciones.
-<br>
-[Kubernetes](https://kubernetes.io/docs/concepts/)
 
 ---
 @title[Historia]
@@ -43,7 +41,7 @@ nodo3          Ready                      <none>    20d       v1.8.0
 ```
 
 ---
-@title[Instalación1]
+@title[Win-Instalación1]
 ### Instalación Kubectl Windows (chocolatey)
 
 Ejecutar desde PowerShell o CMD:
@@ -61,12 +59,51 @@ kubectl version
 ([instalación chocolatey](https://chocolatey.org/install))
 
 +++
-@title[Instalación2]
+@title[Win-Instalación2]
 ### Instalación Kubectl Windows (binario)
 
 Descargar el binario kubectl.exe
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/windows/amd64/kubectl.exe
+```
+
+---
+@title[Linux-Instalación1]
+### Instalación Kubectl Linux (yum)
+
+Crear repositorio
+```
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+yum install -y kubectl
+```
+
+<br>
+
+Revisar la versión de `kubectl`:
+```
+kubectl version
+```
+
++++
+@title[Linux-Instalación2]
+### Instalación Kubectl Linux (binario)
+
+Descargar el binario kubectl
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubectl
+
+chmod +x ./kubectl
+
+sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
 ---
@@ -88,7 +125,6 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/w
 Son áreas de trabajo que agrupan diferentes objetos como, deployment, services, ingress, etc.
 <br>
 Estas áreas de trabajo son independientes entre si.
-
 ```
 $ kubectl get namespaces
 NAME          STATUS    AGE
@@ -101,8 +137,8 @@ kube-system   Active    43d
 @title[Pod]
 ## Pod
 
-Un Pod es la unidad mas pequeña que se puede desplegar y puede ser modificada o programada desde Kubernetes.
-
+Un Pod es la unidad más pequeña que se despliega y puede ser modificada o programada desde Kubernetes.
+Puede estar compuesta de uno o más contenedores.
 ```
 $ docker container run -d httpd
 87595b724f012b29857a55283383c4214e07188dfe6a06553cc329282c336f0e
@@ -180,100 +216,10 @@ $ docker container rm 87595b7
 87595b7
 ```
 
----
-@title[Práctica]
-# Práctica
-
-- Buscar una imagen |
-- Descargar e iniciar un contenedor con parámetros |
-- Verificar su estado y si es visible (web) |
-- Eliminar solo el contenedor |
-
----
-@title[Crear imagen]
-## Crear una imagen
-
-Para crear una imagen podemos hacerlo basándonos en un contenedor que hayamos iniciado, ajustándolo a nuestra necesidad.
-También podemos crear una imagen en base a un archivo (Dockerfile).
-
 +++
-@title[Creando imagen1]
-## Creando imagen desde contenedor
+@title[Info]
 
-Debemos tener un contenedor iniciado y modificarlo.
-Posteriormente ejecutamos lo siguiente:
-
-```
-$ docker container ls
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-836d31ee29e2        httpd               "httpd-foreground"       8 minutes ago       Up 8 minutes        0.0.0.0:82->80/tcp     mi_apache
-
-$ docker commit mi_apache mi_imagen
-sha256:9f622d201933a6197310aa0995e746b3bbd736e04f186c39b1adb4b28494f316
-```
----
-@title[Práctica2]
-# Práctica
-
-- Iniciar un contenedor apache |
-- Editar el contenedor |
-- Crear una imagen |
-- Iniciar un contenedor con la nueva imagen |
-- Eliminar el contenedor y la imagen |
----
-
-@title[Dockerfile]
-## Dockerfile
-
-Dockerfile define varios pasos que se requieren para la creación de una imagen.
-Estos pasos se añaden a un archivo de texto, llamado de preferencia, Dockerfile.
-
-+++
-@title[Ejemplo Dockerfile]
-
-### Ejemplo de archivo Dockerfile
-
-```
-# FROM Indica qué imagen base se usará
-FROM ubuntu:16.04
-
-# Se dejan los datos del creador de la imagen
-MAINTAINER Nombre Apellido version: 1 correo@dominio.com
-
-# Ejecuta tareas antes de crear la imagen
-RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Asignación de variables
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOG_DIR /var/log/apache2
-
-# Puerto o rango de puertos que se expondrán en la imágen
-EXPOSE 80
-
-# Comandos que se ejecutarán una vez se creé el contenedor
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
-```
-
-+++
-@title[Creando imagen2]
-
-## Crear imagen desde Dockerfile
-
-Se deben definir los pasos para la imagen en un archivo llamado `Dockerfile`. Posteriormente se crea la imagen de la siguiente manera:
-
-```
-$ docker build -t nombre_de_la_imagen:version .
-```
-
----
-@title[Práctica3]
-# Práctica Dockerfile
-
-- Crear un archivo Dockerfile con sus pasos |
-- Crear una imagen (Dockerfile) |
-- Iniciar un contenedor con la nueva imagen |
-- Eliminar el contenedor y la imagen |
+Más información sobre [Conceptos Kubernetes](https://kubernetes.io/docs/concepts/)
 
 ---
 @title[Gracias]
