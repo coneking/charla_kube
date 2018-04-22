@@ -137,6 +137,8 @@ Puede estar compuesta de uno o más contenedores.
 +++
 @title[Ejemplo Pod]
 
+Ejemplo Pod
+
 ```yaml
 apiVersion: apps/v1
 kind: Pod ----> Tipo de objeto o recurso
@@ -156,9 +158,15 @@ spec:
 @title[Service]
 ## Service
 
-Un grupo de pod a los que se les define un concepto, con la logica de acceder a los mismos.
+Este objeto es encargado de balancear la carga entre los distintos pod que tenga asociado.
+Expone sus servicios a través de un proxy
 
-```
++++
+@title[Ejemplo Service]
+
+Ejemplo Service
+
+```yaml
 apiVersion: v1
 kind: Service ----> Tipo de objeto o recurso
 metadata:
@@ -180,6 +188,9 @@ Es el controlador de despliegue de aplicaciones. Este objeto declara actualizaci
 
 +++
 @title[Ejemplo Deployment]
+
+Ejemplo Deployment
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment ----> Tipo de objeto o recurso
