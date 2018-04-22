@@ -1,1 +1,0 @@
-# Capacitación Kubernetes por Gitpitch
