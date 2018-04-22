@@ -35,7 +35,7 @@ Listar los nodos del cluster Kubernetes:
 ```
 $ kubectl get nodes
 NAME           STATUS                     ROLES     AGE       VERSION
-nodo1          Ready,SchedulingDisabled   <none>    20d       v1.8.0
+nodo1          Ready,SchedulingDisabled   master    20d       v1.8.0
 nodo2          Ready                      <none>    20d       v1.8.0
 nodo3          Ready                      <none>    20d       v1.8.0
 ```
@@ -86,13 +86,6 @@ EOF
 yum install -y kubectl
 ```
 
-<br>
-
-Revisar la versión de `kubectl`:
-```
-kubectl version
-```
-
 +++
 @title[Linux-Instalación2]
 ### Instalación Kubectl Linux (binario)
@@ -118,13 +111,14 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 - ReplicaSets |
 - Ingress |
 
-+++
+---
 @title[Namespace]
 ## Namespace
 
 Son áreas de trabajo que agrupan diferentes objetos como, deployment, services, ingress, etc.
 <br>
 Estas áreas de trabajo son independientes entre si.
+
 ```
 $ kubectl get namespaces
 NAME          STATUS    AGE
@@ -133,90 +127,112 @@ kube-public   Active    43d
 kube-system   Active    43d
 ```
 
-+++
+---
 @title[Pod]
 ## Pod
 
 Un Pod es la unidad más pequeña que se despliega y puede ser modificada o programada desde Kubernetes.
 Puede estar compuesta de uno o más contenedores.
-```
-$ docker container run -d httpd
-87595b724f012b29857a55283383c4214e07188dfe6a06553cc329282c336f0e
-```
 
 +++
+@title[Ejemplo Pod]
+
+```yaml
+apiVersion: apps/v1
+kind: Pod ----> Tipo de objeto o recurso
+metadata:
+  name: my-app ----> Nombre del pod
+  labels:
+    app: nginx
+spec:
+  containers: ----> El/los contenedores del pod
+  - name: nginx ----> Nombre del contenedor
+    image: nginx:1.10.2 ----> Imagen del contenedor
+    ports:
+     - containerPort: 80 ----> Puerto del contenedor
+```
+
+---
 @title[Service]
 ## Service
 
 Un grupo de pod a los que se les define un concepto, con la logica de acceder a los mismos.
 
 ```
-$ docker container stop 87595b7
-87595b7
-
-$ docker container rm 87595b7
-87595b7
+apiVersion: v1
+kind: Service ----> Tipo de objeto o recurso
+metadata:
+  name: my-service ----> Nombre del servicio
+spec:
+  selector:
+    app: my-app
+  ports:
+  - protocol: TCP ----> Protocolo a usar
+    port: 80 ----> Puerto a exponer
+    targetPort: 80 ----> Puerto 
 ```
 
-+++
+---
 @title[Deployment]
 ## Deployment
 
-Es el controlador de implementaciones, esta declara actualizaciones para Pods  y ReplicaSets.
-
-```
-$ docker container stop 87595b7
-87595b7
-
-$ docker container rm 87595b7
-87595b7
-```
+Es el controlador de despliegue de aplicaciones. Este objeto declara actualizaciones para Pods y ReplicaSets.
 
 +++
+@title[Ejemplo Deployment]
+```yaml
+apiVersion: apps/v1
+kind: Deployment ----> Tipo de objeto o recurso
+metadata:
+  name: nginx-deployment ----> Nombre del despliegue
+  labels:
+    app: nginx
+spec:
+  replicas: 1 ----> Cantidad de replicas
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers: ----> El/los contenedores del pod
+      - name: nginx ----> Nombre del contenedor
+        image: nginx:1.10.2 ----> Imagen del contenedor
+        ports:
+        - containerPort: 80 ----> Puerto del contenedor
+```
+
+---
 @title[PV y PVC]
 ## PV y PVC
 
 **PV** Volumen Persistente , este define las asignaciones de almacenamiento, se puede divir en sub volumenes.
 **PVC** Reivindicaciones de Volumen persisitente, un espacio de un PV que solicita ser asignado para un o mas pods.
 
-```
-$ docker container stop 87595b7
-87595b7
-
-$ docker container rm 87595b7
-87595b7
-```
->**Nota:** Nota
-
-+++
+---
 @title[PeplicaSets]
 ## PeplicaSets
 
-Es un controldor de replicación.
-
-```
-$ docker container stop 87595b7
-87595b7
-
-$ docker container rm 87595b7
-87595b7
-```
+Es un controldor de replicación. Se basa en su estado `deseado` para mantener uno o más pod activos.
 
 +++
+@title[Ejemplo ReplicaSets]
+Ejemplo
+
+---
 @title[Ingress]
 ## Ingress
 
 Es el objeto API que gestiona es acceso externo a los servicios de un cluster.
-
-```
-$ docker container stop 87595b7
-87595b7
-
-$ docker container rm 87595b7
-87595b7
-```
+Es quien gestiona la comunicación del usuario con un servicio dentro del cluster Kubernetes.
 
 +++
+@title[Ejemplo Ingress]
+Ejemplo
+
+---
 @title[Info]
 
 Más información sobre [Conceptos Kubernetes](https://kubernetes.io/docs/concepts/)
