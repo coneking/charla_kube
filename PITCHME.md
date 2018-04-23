@@ -184,7 +184,7 @@ spec:
 @title[Deployment]
 ## Deployment
 
-Es el controlador de despliegue de aplicaciones. Este objeto declara actualizaciones para Pods y ReplicaSets.
+Controla el despliegue de aplicaciones. Este objeto se encarga de las actualizaciones para Pods y ReplicaSets, manteniéndolos en un estado deseado.
 
 +++
 @title[Ejemplo Deployment]
@@ -220,11 +220,9 @@ spec:
 ## PV y PVC
 
 PersistentVolum (**PV**): Es una porción de storage que el administrador del cluster Kubernetes otorga al usuario.
-No pertenece a ningún namespace
 <br>
 
 PersistenVolumClaim (**PVC**): Es el espacio que el usuario solicita para ser asignado a uno o más pods.
-Debe pertenecer a un namespace
 
 +++
 @title[Polícitas Recuperación]
@@ -239,7 +237,7 @@ Debe pertenecer a un namespace
 
 Ejemplo PV
 
-```
+```yaml
 apiVersion: v1
 kind: PersistentVolume ----> Tipo de objeto o recurso
 metadata:
