@@ -219,18 +219,18 @@ spec:
 @title[PV y PVC]
 ## PV y PVC
 
-PersistentVolum (**PV**): Es una porción de storage que el administrador del cluster Kubernetes otorga al usuario.
+PersistentVolume (**PV**): Es una porción de storage que el administrador del cluster Kubernetes otorga al usuario.
 <br>
 
-PersistenVolumClaim (**PVC**): Es el espacio que el usuario solicita para ser asignado a uno o más pods.
+PersistenVolumeClaim (**PVC**): Es el espacio que el usuario solicita para ser asignado a uno o más pods.
 
 +++
-@title[Polícitas Recuperación]
+@title[Políticas Recuperación]
 ### Políticas de Recuperación
 
 **RETAIN:** Mantiene el espacio de disco provisionado si el PVC es eliminado por el usuario.
 
-**DELETE:** Se limina tanto el PV como el espacio en disco previamente provisionado.
+**DELETE:** Se elimina tanto el PV como el espacio en disco previamente provisionado.
 
 +++
 @title[Ejemplo PV]
@@ -261,12 +261,12 @@ spec:
 @title[ReplicaSets]
 ## ReplicaSets
 
-Es un controldor de replicación. Se basa en su estado `deseado` para mantener uno o más pod activos.
+Es un controlador de replicación. Se basa en su estado `deseado` para mantener uno o más pod activos.
 Es creado en el recurso `Deployment`.
 <br>
 Ejemplo 2 ReplicaSets
 ```
-$ kubectl -n prueba get rs
+$ kubectl get replicasets
 NAME                               DESIRED   CURRENT   READY     AGE
 nginx-deployment-test-6c54bd5869   2         2         2         4h
 ```
@@ -276,7 +276,7 @@ nginx-deployment-test-6c54bd5869   2         2         2         4h
 ## Ingress
 
 Es el objeto API que gestiona el acceso a los servicios de un cluster mediante reglas.
-Gestiona la comunicación del usuario con un servicio dentro del cluster Kubernetes.
+Negocia la comunicación del usuario con un servicio dentro del cluster Kubernetes.
 
 <p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/ingress.png" width="500" /></p>
 
