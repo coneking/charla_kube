@@ -159,7 +159,7 @@ spec:
 ## Service
 
 Este objeto es encargado de balancear la carga entre los distintos pod que tenga asociado.
-Expone sus servicios a través de un proxy
+Expone sus servicios a través de un proxy.
 
 +++
 @title[Ejemplo Service]
@@ -177,7 +177,7 @@ spec:
   ports:
   - protocol: TCP ----> Protocolo a usar
     port: 80 ----> Puerto a exponer
-    targetPort: 80 ----> Puerto 
+    targetPort: 80 ----> Puerto del pod
 ```
 
 ---
@@ -219,29 +219,89 @@ spec:
 @title[PV y PVC]
 ## PV y PVC
 
-**PV** Volumen Persistente , este define las asignaciones de almacenamiento, se puede divir en sub volumenes.
-**PVC** Reivindicaciones de Volumen persisitente, un espacio de un PV que solicita ser asignado para un o mas pods.
+PersistentVolum (**PV**): Es una porción de storage que el administrador del cluster Kubernetes otorga al usuario.
+No pertenece a ningún namespace
+<br>
 
----
-@title[PeplicaSets]
-## PeplicaSets
-
-Es un controldor de replicación. Se basa en su estado `deseado` para mantener uno o más pod activos.
+PersistenVolumClaim (**PVC**): Es el espacio que el usuario solicita para ser asignado a uno o más pods.
+Debe pertenecer a un namespace
 
 +++
-@title[Ejemplo ReplicaSets]
-Ejemplo
+@title[Polícitas Recuperación]
+### Políticas de Recuperación
+
+**RETAIN:** Mantiene el espacio de disco provisionado si el PVC es eliminado por el usuario.
+
+**DELETE:** Se limina tanto el PV como el espacio en disco previamente provisionado.
+
++++
+@title[Ejemplo PV]
+
+Ejemplo PV
+
+```
+apiVersion: v1
+kind: PersistentVolume ----> Tipo de objeto o recurso
+metadata:
+  name: qa-jenkins-home ----> Nombre del PeristentVolume
+spec:
+  accessModes:
+  - ReadWriteOnce ----> Tipo de acceso
+  capacity:
+    storage: 2Gi ----> Tamaño asignado
+  persistentVolumeReclaimPolicy: Retain ----> Política de reclamación
+  mountOptions: ----> Opciones de monataje
+    - hard
+    - nfsvers=3
+  nfs: 
+    path: /mnt ----> Punto de montaje de storage
+    server: 172.17.0.2 ----> Servidor Storage
+  
+```
+
+---
+@title[ReplicaSets]
+## ReplicaSets
+
+Es un controldor de replicación. Se basa en su estado `deseado` para mantener uno o más pod activos.
+Es creado en el recurso `Deployment`.
+<br>
+Ejemplo 2 ReplicaSets
+```
+$ kubectl -n prueba get rs
+NAME                               DESIRED   CURRENT   READY     AGE
+nginx-deployment-test-6c54bd5869   2         2         2         4h
+```
 
 ---
 @title[Ingress]
 ## Ingress
 
-Es el objeto API que gestiona es acceso externo a los servicios de un cluster.
-Es quien gestiona la comunicación del usuario con un servicio dentro del cluster Kubernetes.
+Es el objeto API que gestiona el acceso a los servicios de un cluster mediante reglas.
+Gestiona la comunicación del usuario con un servicio dentro del cluster Kubernetes.
+
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/ingress.png" width="500" /></p>
 
 +++
 @title[Ejemplo Ingress]
-Ejemplo
+
+Ejemplo Ingress
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: Ingress ----> Tipo de objeto o recurso
+metadata:
+  name: my-ingress ----> Nombre del ingress
+spec:
+  rules:
+  - host: my-dns-url.cencosud.corp ----> DNS de acceso usuario
+    http:
+      paths:
+      - backend:
+          serviceName: my-service ----> Nombre del servicio a acceder
+          servicePort: 80 ----> Puerto a exponer 
+        path: /
+```
 
 ---
 @title[Info]
