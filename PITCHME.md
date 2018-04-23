@@ -222,7 +222,7 @@ spec:
 PersistentVolume (**PV**): Es una porción de storage que el administrador del cluster Kubernetes otorga al usuario.
 <br>
 
-PersistenVolumeClaim (**PVC**): Es el espacio que el usuario solicita para ser asignado a uno o más pods.
+PersistentVolumeClaim (**PVC**): Es el espacio que el usuario solicita para ser asignado a uno o más pods.
 
 +++
 @title[Políticas Recuperación]
