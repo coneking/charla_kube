@@ -9,6 +9,7 @@ La infraestructura base del cluster de Kubernetes se compone de un servidor prin
 
 <p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/master-nodes.png" width="500" /></p>
 
+---
 @title[Master]
 ## Master
 
