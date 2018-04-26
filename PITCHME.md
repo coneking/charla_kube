@@ -1,4 +1,4 @@
----?image=images/kubernetes.png&size=auto 30%
+---?image=images/kubernetes.png&size=auto 10%
 @title[Inicio]
 
 ---
