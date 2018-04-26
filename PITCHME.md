@@ -22,7 +22,7 @@ Desarrollado originalmente por Google en 2014 y liberado en el 2015 para la Clou
 Para administrar Kubernetes utilizamos el comando **kubectl**, el cual interactúa con el cluster Kubernetes.
 <br>
 
-**Sintáxis:**
+**Sintaxis:**
 ```
 kubectl [command] [TYPE] [NAME] [flags]
 ```
