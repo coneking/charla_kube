@@ -73,6 +73,12 @@ Su función es ejecutar contenedores (Docker) y administrar sus imágenes.
 
 Se encarga de realizar `forwarding` de conexiones TCP o UDP para exponer Services o PODs.
 
+---
+@title[Info]
+
+Más información sobre [Conceptos Kubernetes](https://kubernetes.io/docs/concepts/)
+
+
 ---?image=images/kismatic.png&size=auto 40%
 @title[Kismatic]
 
@@ -92,11 +98,6 @@ Es un conjunto de herramientas y buenas prácticas predefinidas, que facilitan e
 - Ubuntu 16.04.3 |
 
 +++
-@title[Info Kismatic]
-
-Más información sobre [Kismatic](https://github.com/apprenda/kismatic)
-
----
 @title[Práctica]
 ## Práctica
 
@@ -108,9 +109,9 @@ $ wget https://github.com/apprenda/kismatic/releases/download/v1.8.0/kismatic-v1
 ```
 
 ---
-@title[Info]
+@title[Info Kismatic]
 
-Más información sobre [Conceptos Kubernetes](https://kubernetes.io/docs/concepts/)
+Más información sobre [Kismatic](https://github.com/apprenda/kismatic)
 
 ---
 @title[Gracias]
