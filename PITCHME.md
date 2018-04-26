@@ -82,6 +82,31 @@ Se encarga de realizar `forwarding` de conexiones TCP o UDP para exponer Service
 
 Es un conjunto de herramientas y buenas prácticas predefinidas, que facilitan el despliegue de clusters Kubernetes.
 
++++
+@title[Soporte]
+
+## Sistemas Operativos Soportados
+
+- RHEL 7.4 |
+- CentOS 7.3 |
+- Ubuntu 16.04.3 |
+
++++
+@title[Info Kismatic]
+
+Más información sobre [Kismatic](https://github.com/apprenda/kismatic)
+
+---
+@title[Práctica]
+## Práctica
+
+- Instalación [Kismatic](https://github.com/apprenda/kismatic/releases)
+
+```
+$ mkdir $HOME/kismatic; cd $HOME/kismatic
+$ wget https://github.com/apprenda/kismatic/releases/download/v1.8.0/kismatic-v1.8.0-linux-amd64.tar.gz -O - | tar -xz
+```
+
 ---
 @title[Info]
 
