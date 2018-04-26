@@ -14,7 +14,7 @@ La infraestructura base del cluster de Kubernetes se compone de un servidor prin
 ## Master
 
 Sus componentes principales son `etcd`, `APIServer`, `Scheduler`, `Controller-Manager`.
-Estos componentes toman desiciones sobre el cluster 
+Estos componentes toman decisiones sobre el cluster 
 
 +++
 @title[etcd]
