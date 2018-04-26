@@ -45,6 +45,7 @@ Estas desiciones son tomadas en base a:
 @title[Controller-Manager]
 ## Controller-Manager
 
+El administrador de controlador de Kubernetes es un daemon (Servicio) que integra los bucles (secuencia repetida) de control central enviados con Kubernetes.
 
 ---
 @title[Nodes]
