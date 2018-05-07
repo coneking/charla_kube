@@ -62,13 +62,14 @@ Más información sobre plan de instalación [Cluster Kubernetes](https://github
 
 ## Prerequisitos (nodos)
 
+- Deben tener salida a internet. |
 - Crear usuario con permisos de sudo. |
 - Crear y copiar llave de privacidad ssh. |
-- Deben tener salida a internet. |
-- Hostname debe ser el mismo que en la configuración de kismatic. |
 - No deben tener swap. |
+- Hostname debe ser el mismo que en la configuración de kismatic. |
+- En /etc/resolv.conf debe tener la línea search. |
 - Debe tener VG para /var/lib/docker (recomendado). |
-- En /etc/resolv.conf debe tener la línea `search`.  |
+
 
 ---
 @title[Práctica1]
@@ -83,9 +84,15 @@ Más información sobre plan de instalación [Cluster Kubernetes](https://github
 
 ## Práctica 2
 
+- Playbook (deshabilitar swap, reconfigura grub, elimina lv).
 
 +++
 @title[]
+
+## Práctica 3
+
+- Playbook (reconfigurar hostname, /etc/resolv.conf).
+
 ---
 @title[Gracias]
 
