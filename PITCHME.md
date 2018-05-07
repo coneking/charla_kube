@@ -9,20 +9,20 @@
 
 ## Descripción de nodos
 
-* etcd
-  * Proporcionan almacenamiento de datos para los nodos Master.
-* master
-  * Proporcionan API Endpoints y administran los Pods de los nodos Workers.
-* worker
-  * Nodos que almacenan el despliegue de Pods.
+- etcd
+  - Proporcionan almacenamiento de datos para los nodos Master. |
+- master
+  - Proporcionan API Endpoints y administran los Pods de los nodos Workers. |
+- worker
+  - Nodos que almacenan el despliegue de Pods. |
 
 
 ---
 @title[Hardware]
 
-## Requerimientos mínimos de hardware
+### Requerimientos mínimos de hardware
 
-Nodos | CPU | Ram  | Disco (dev) | Disco (prod)
+Nodos | CPU | Ram  | Disk (dev) | Disk (prod)
 ---  | --- | ---  | ---         | ---
 etcd    | 1 Core, 2 GHz | 1 GB | 8 GB | 50 GB
 master  | 1 Core, 2 GHz | 2 GB | 8 GB | 50 GB
@@ -32,12 +32,12 @@ worker  | 1 Core, 2 GHz | 1 GB | 8 GB | 200 GB
 ---
 @title[Plan_etcd]
 
-## Plan para nodos etcd
+### Plan para nodos etcd
 
 
 Cantidad de Nodos | Descripción
 ---          | ---
-1        | Inseguro. Se usa para entornos pequeños de desarrollo
+1        | Inseguro. Entornos de desarrollo
 3        | Soporta fallas en cualquier nodo
 5        | Soporta fallas en dos nodos a la vez
 7        | Soporta fallas en tres nodos a la vez
@@ -45,13 +45,17 @@ Cantidad de Nodos | Descripción
 ---
 @title[Plan_master]
 
-## Plan para nodos master
+### Plan para nodos master
 
-Cantidad de Nodos | Descripción
+Nº Nodos | Descripción
 ---      | --- 
-1        | Inseguro. Se usa para entornos pequeños de desarrollo
+1        | Inseguro. Entornos de desarrollo
 2        | Soporta fallas en cualquier nodo
 
+---
+@title[Info_Planning]
+
+Más información sobre plan de instalación [Cluster Kubernetes](https://github.com/apprenda/kismatic/blob/master/docs/plan.md)
 
 ---
 @title[Prerequisitos]
