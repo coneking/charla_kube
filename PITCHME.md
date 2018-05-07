@@ -11,10 +11,8 @@
 
 * etcd
   * Proporcionan almacenamiento de datos para los nodos Master.
-
 * master
   * Proporcionan API Endpoints y administran los Pods de los nodos Workers.
-
 * worker
   * Nodos que almacenan el despliegue de Pods.
 
@@ -24,11 +22,11 @@
 
 ## Requerimientos mínimos de hardware
 
-Nodos    | CPU               | Ram  | Disco (Prototyping) | Disco (Producción)
----      | ---               | ---  | ---                 | ---
-etcd     | 1 CPU Core, 2 GHz | 1 GB | 8 GB                | 50 GB
-master   | 1 CPU Core, 2 GHz | 2 GB | 8 GB                | 50 GB
-worker   | 1 CPU Core, 2 GHz | 1 GB | 8 GB                | 200 GB
+Nodos | CPU | Ram  | Disco (dev) | Disco (prod)
+---  | --- | ---  | ---         | ---
+etcd    | 1 Core, 2 GHz | 1 GB | 8 GB | 50 GB
+master  | 1 Core, 2 GHz | 2 GB | 8 GB | 50 GB
+worker  | 1 Core, 2 GHz | 1 GB | 8 GB | 200 GB
 
 
 ---
@@ -38,7 +36,7 @@ worker   | 1 CPU Core, 2 GHz | 1 GB | 8 GB                | 200 GB
 
 
 Cantidad de Nodos | Descripción
----          | ---  | ---
+---          | ---
 1        | Inseguro. Se usa para entornos pequeños de desarrollo
 3        | Soporta fallas en cualquier nodo
 5        | Soporta fallas en dos nodos a la vez
@@ -60,24 +58,19 @@ Cantidad de Nodos | Descripción
 
 ## Prerequisitos (nodos)
 
-* Crear usuario con permisos de sudo. |
-* Crear y copiar llave de privacidad ssh. |
-* Deben tener salida a internet. |
-* Hostname debe ser el mismo que en la configuración de kismatic. |
-* No deben tener swap. |
-* Debe tener VG para /var/lib/docker (recomendado). |
-* En `/etc/resolv.conf` debe tener la línea `search`. |
+- Crear usuario con permisos de sudo. |
+- Crear y copiar llave de privacidad ssh. |
+- Deben tener salida a internet. |
+- Hostname debe ser el mismo que en la configuración de kismatic. |
+- No deben tener swap. |
+- Debe tener VG para /var/lib/docker (recomendado). |
+- En /etc/resolv.conf debe tener la línea search.  |
 
 +++
 @title[Práctica]
 ## Práctica
 
-- Instalación [Kismatic](https://github.com/apprenda/kismatic/releases)
-
-```
-$ mkdir $HOME/kismatic; cd $HOME/kismatic
-$ wget https://github.com/apprenda/kismatic/releases/download/v1.8.0/kismatic-v1.8.0-linux-amd64.tar.gz -O - | tar -xz
-```
+Creación de Playbooks (Ansible)
 
 ---
 @title[Info Kismatic]
