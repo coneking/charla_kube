@@ -1,101 +1,72 @@
 ---?image=images/kubernetes.png&size=auto 40%
 @title[Inicio]
 
----
-@title[Infraestructura]
-## Infraestructura
-
-La infraestructura base del cluster de Kubernetes se compone de un servidor principal Master y sus Nodos (Workers).
-
-<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/develop/images/master-nodes.png" width="500" /></p>
-
----
-@title[Master]
-## Master
-
-Sus componentes principales son `etcd`, `APIServer`, `Scheduler`, `Controller-Manager`.
-Estos componentes toman desiciones sobre el cluster 
-
-+++
-@title[etcd]
-## Etcd
-
-Etcd se utiliza como almacén de respaldo de Kubernetes para todos los datos de cluster.
-Su formato llave/valor permite que los componentes estén al tanto de cualquier cambio en el cluster.
-
-+++
-@title[APIServer]
-## APIServer
-
-Valida y configura datos para Pods, Services, ReplicaSets, entre otros.
-
-+++
-@title[Scheduler]
-## Scheduler
-
-Determina en qué nodo alojar un pod y sincroniza su información con la configuración del servicio.
-Estas desiciones son tomadas en base a:
-
-- Recursos del nodo |
-- Restricciones de Hardware |
-- Restricciones de software |
-- Interferencia entre carga de trabajo |
-
-+++
-@title[Controller-Manager]
-## Controller-Manager
-
-
----
-@title[Nodes]
-## Nodes (Workers)
-
-Son servidores que alojan los despliegues de aplicación. Son administrados por el servidor Master.
-Se componen de los servicios `kubelet`, `container runtime` y `proxy`.
-
-
-+++
-@title[Kubelet]
-## Kubelet 
-
-Verifica que los contendores que forman parte del POD estén en ejecución.
-Solo administra contenedores creados por Kubernetes.
-
-+++
-@title[Container runtime]
-## Container Runtime
-
-Su función es ejecutar contenedores (Docker) y administrar sus imágenes.
-
-+++
-@title[Proxy]
-## Proxy
-
-Se encarga de realizar `forwarding` de conexiones TCP o UDP para exponer Services o PODs.
-
----
-@title[Info]
-
-Más información sobre [Conceptos Kubernetes](https://kubernetes.io/docs/concepts/)
-
-
 ---?image=images/kismatic.png&size=auto 40%
 @title[Kismatic]
 
 ---
-@title[Introducción]
-## Kismatic Enterprise Toolkit (KET)
+@title[Descripción_Nodos]
 
-Es un conjunto de herramientas y buenas prácticas predefinidas, que facilitan el despliegue de clusters Kubernetes.
+## Descripción de nodos
 
-+++
-@title[Soporte]
+* etcd
+  * Proporcionan almacenamiento de datos para los nodos Master.
 
-## Sistemas Operativos Soportados
+* master
+  * Proporcionan API Endpoints y administran los Pods de los nodos Workers.
 
-- RHEL 7.4 |
-- CentOS 7.3 |
-- Ubuntu 16.04.3 |
+* worker
+  * Nodos que almacenan el despliegue de Pods.
+
+
+---
+@title[Hardware]
+
+## Requerimientos mínimos de hardware
+
+Nodos    | CPU               | Ram  | Disco (Prototyping) | Disco (Producción)
+---      | ---               | ---  | ---                 | ---
+etcd     | 1 CPU Core, 2 GHz | 1 GB | 8 GB                | 50 GB
+master   | 1 CPU Core, 2 GHz | 2 GB | 8 GB                | 50 GB
+worker   | 1 CPU Core, 2 GHz | 1 GB | 8 GB                | 200 GB
+
+
+---
+@title[Plan_etcd]
+
+## Plan para nodos etcd
+
+
+Cantidad de Nodos | Descripción
+---          | ---  | ---
+1        | Inseguro. Se usa para entornos pequeños de desarrollo
+3        | Soporta fallas en cualquier nodo
+5        | Soporta fallas en dos nodos a la vez
+7        | Soporta fallas en tres nodos a la vez
+
+---
+@title[Plan_master]
+
+## Plan para nodos master
+
+Cantidad de Nodos | Descripción
+---      | --- 
+1        | Inseguro. Se usa para entornos pequeños de desarrollo
+2        | Soporta fallas en cualquier nodo
+
+
+---
+@title[Prerequisitos]
+
+## Prerequisitos (nodos)
+
+* Crear usuario con permisos de sudo. |
+* Crear y copiar llave de privacidad ssh. |
+* Deben tener salida a internet. |
+* Hostname debe ser el mismo que en la configuración de kismatic. |
+* No deben tener swap. |
+* Debe tener VG para /var/lib/docker (recomendado). |
+* En `/etc/resolv.conf` debe tener la línea `search`. |
 
 +++
 @title[Práctica]
