@@ -22,11 +22,11 @@
 
 ### Requerimientos mínimos de hardware
 
-Nodo   | CPU     | Ram  | Disk (dev) | Disk (prod)
----    | ---     | ---  | ---        | ---
-etcd   | 1, 2GHz | 1 GB | 8 GB       | 50 GB
-master | 1, 2GHz | 2 GB | 8 GB       | 50 GB
-worker | 1, 2GHz | 1 GB | 8 GB       | 200 GB
+Nodo   | CPU      | Ram  | Disk (dev) | Disk (prod)
+---    | ---      | ---  | ---        | ---
+etcd   | 1, 2 GHz | 1 GB | 8 GB       | 50 GB
+master | 1, 2 GHz | 2 GB | 8 GB       | 50 GB
+worker | 1, 2 GHz | 1 GB | 8 GB       | 200 GB
 
 
 ---
@@ -68,19 +68,24 @@ Más información sobre plan de instalación [Cluster Kubernetes](https://github
 - Hostname debe ser el mismo que en la configuración de kismatic. |
 - No deben tener swap. |
 - Debe tener VG para /var/lib/docker (recomendado). |
-- En /etc/resolv.conf debe tener la línea search.  |
-
-+++
-@title[Práctica]
-## Práctica
-
-Creación de Playbooks (Ansible)
+- En /etc/resolv.conf debe tener la línea `search`.  |
 
 ---
-@title[Info Kismatic]
+@title[Práctica1]
 
-Más información sobre [Kismatic](https://github.com/apprenda/kismatic)
+## Práctica 1
 
+- Crear llave ssh.
+- Playbook (crear usuario, copiar llave, agregar sudo).
+
++++
+@title[Práctica2]
+
+## Práctica 2
+
+
++++
+@title[]
 ---
 @title[Gracias]
 
