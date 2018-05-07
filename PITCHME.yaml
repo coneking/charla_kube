@@ -1,5 +1,4 @@
 logo: images/logo.png
-# theme : beige 
-# background: images/wood.jpg
+theme : beige 
 slide-number : true
 # transition : fade
