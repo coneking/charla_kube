@@ -22,11 +22,11 @@
 
 ### Requerimientos mínimos de hardware
 
-Nodos | CPU | Ram  | Disk (dev) | Disk (prod)
+Nodo | CPU | Ram  | Disk (dev) | Disk (prod)
 ---  | --- | ---  | ---         | ---
-etcd    | 1 Core, 2 GHz | 1 GB | 8 GB | 50 GB
-master  | 1 Core, 2 GHz | 2 GB | 8 GB | 50 GB
-worker  | 1 Core, 2 GHz | 1 GB | 8 GB | 200 GB
+etcd    | 1Core, 2GHz | 1 GB | 8 GB | 50 GB
+master  | 1Core, 2GHz | 2 GB | 8 GB | 50 GB
+worker  | 1Core, 2GHz | 1 GB | 8 GB | 200 GB
 
 
 ---
@@ -35,12 +35,12 @@ worker  | 1 Core, 2 GHz | 1 GB | 8 GB | 200 GB
 ### Plan para nodos etcd
 
 
-Cantidad de Nodos | Descripción
+Nº Nodos | Descripción
 ---          | ---
 1        | Inseguro. Entornos de desarrollo
 3        | Soporta fallas en cualquier nodo
-5        | Soporta fallas en dos nodos a la vez
-7        | Soporta fallas en tres nodos a la vez
+5        | Soporta fallas en dos nodos
+7        | Soporta fallas en tres nodos
 
 ---
 @title[Plan_master]
