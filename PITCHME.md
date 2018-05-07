@@ -22,11 +22,11 @@
 
 ### Requerimientos mínimos de hardware
 
-Nodo | CPU | Ram  | Disk (dev) | Disk (prod)
----  | --- | ---  | ---         | ---
-etcd    | 1Core, 2GHz | 1 GB | 8 GB | 50 GB
-master  | 1Core, 2GHz | 2 GB | 8 GB | 50 GB
-worker  | 1Core, 2GHz | 1 GB | 8 GB | 200 GB
+Nodo | CPU           | Ram  | Disk (dev) | Disk (prod)
+---  | ---           | ---  | ---  | ---
+etcd   | 1 Core, 2GHz | 1 GB | 8 GB | 50 GB
+master | 1 Core, 2GHz | 2 GB | 8 GB | 50 GB
+worker | 1 Core, 2GHz | 1 GB | 8 GB | 200 GB
 
 
 ---
