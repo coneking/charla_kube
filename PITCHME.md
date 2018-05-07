@@ -87,7 +87,7 @@ Más información sobre plan de instalación [Cluster Kubernetes](https://github
 - Playbook (deshabilitar swap, reconfigura grub, elimina lv).
 
 +++
-@title[]
+@title[Práctica3]
 
 ## Práctica 3
 
