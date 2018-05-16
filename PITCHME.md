@@ -49,13 +49,43 @@ Otra forma de realizar un deployment es a través de línea de comando:
 kubectl -n "Nombre_Namespace" run "Nombre_Deploy" --image="Nombre_de_Imagen"
 ```
 
-Si no se indican la cantidad de replicas, creará un Pod por deploy.
+Si no se indica la cantidad de replicas, creará un Pod por deploy.
 
 ---
-@title[Info_Planning]
+@title[Service]
 
-Más información sobre plan de instalación [Cluster Kubernetes](https://github.com/apprenda/kismatic/blob/master/docs/plan.md)
+## Creación de Service
 
+Los recursos Service se crean en un archivo formato `yaml` y se ejecutan:
+<br>
+
+`kubectl -f create archivo.yaml`
+
+
+---
+@title[Ejemplo_Service]
+
+```
+piVersion: v1
+kind: Service ----> Tipo de objeto o recurso
+metadata:
+  name: my-service ----> Nombre del servicio
+spec:
+  selector:
+    app: my-app
+  ports:
+  - protocol: TCP ----> Protocolo a usar
+    port: 80 ----> Puerto a exponer
+    targetPort: 80 ----> Puerto del pod
+```
+---
+@title[Service2]
+
+Otra forma de crear un recurso "service" es a través de línea de comando:
+
+```
+kubectl -n "Nombre_Namespace" create service "Tipo_servicio" "Nombre_service" --tcp=[port]:[target]
+```
 ---
 @title[Prerequisitos]
 
