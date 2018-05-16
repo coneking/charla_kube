@@ -15,13 +15,13 @@ kubectl create -f archivo.yaml
 +++
 @title[Ejemplo]
 
-<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/dia7/images/deploy1.jpg" width="600" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/dia7/images/deploy1.jpg" width="800" /></p>
 
 
 +++
 @title[Ejemplo2]
 
-<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/dia7/images/deploy2.png" width="600" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/dia7/images/deploy2.jpg" width="800" /></p>
 
 ---
 @title[Ejemplo_Deployment]
