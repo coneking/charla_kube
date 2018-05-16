@@ -9,8 +9,9 @@
 Los despliegues (deployment) se crean en un archivo formato `yaml` y se ejecutan:
 <br>
 
-`kubectl -f create archivo.yaml`
-
+```
+kubectl -f create archivo.yaml
+```
 ---
 @title[Ejemplo_Deployment]
 
@@ -43,7 +44,7 @@ spec:
 ---
 @title[Deployment2]
 
-Otra forma de realizar un deployment es a través de línea de comando:
+Otra forma de crear un "deployment" es a través de línea de comando:
 
 ```
 kubectl -n "Nombre_Namespace" run "Nombre_Deploy" --image="Nombre_de_Imagen"
@@ -59,14 +60,18 @@ Si no se indica la cantidad de replicas, creará un Pod por deploy.
 Los recursos Service se crean en un archivo formato `yaml` y se ejecutan:
 <br>
 
-`kubectl -f create archivo.yaml`
+```
+kubectl -f create archivo.yaml
+```
 
 
 ---
 @title[Ejemplo_Service]
 
-```
-piVersion: v1
+## Ejemplo Service
+
+```yaml
+apiVersion: v1
 kind: Service ----> Tipo de objeto o recurso
 metadata:
   name: my-service ----> Nombre del servicio
