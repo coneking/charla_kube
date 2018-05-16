@@ -1,24 +1,45 @@
 ---?image=images/kubernetes.png&size=auto 40%
 @title[Inicio]
 
----?image=images/kismatic.png&size=auto 40%
-@title[Kismatic]
+---
+@title[Deployment]
+
+## Despliegue de aplicaciones
+
+Los despliegues (deployment) se crean en un archivo formato `yaml` y se ejecutan:
+<br>
+
+`kubectl -f create archivo.yaml`
 
 ---
-@title[Descripción_Nodos]
+@title[Ejemplo_Deployment]
 
-## Descripción de nodos
+## Ejemplo Deployment
 
-- etcd
-  - Proporcionan almacenamiento de datos para los nodos Master. |
-- master
-  - Proporcionan API Endpoints y administran los Pods de los nodos Workers. |
-- worker
-  - Nodos que almacenan el despliegue de Pods. |
+```yaml
+apiVersion: extensions/v1beta1 
+kind: Deployment ----> Tipo de objeto o recurso 
+metadata:   
+  name: nginx-deployment ----> Nombre del despliegue   
+  labels:     
+    app: nginx
+spec:   
+  replicas: 1 ----> Cantidad de replicas   
+  selector:     
+    matchLabels:       
+      app: nginx   
+    template:     
+      metadata:       
+        labels:         
+	  app: nginx     
+      spec:       
+        containers: ----> El/los contenedores del pod       
+	- name: nginx ----> Nombre del contenedor         
+	  image: nginx:1.10.2 ----> Imagen del contenedor         
+	  ports:         
+	  - containerPort: 80 ----> Puerto del contenedor
+```
 
-
----
-@title[Hardware]
 
 ### Requerimientos mínimos de hardware
 
