@@ -45,7 +45,9 @@ spec:
 
 Otra forma de realizar un deployment es a través de línea de comando:
 
-`kubectl -n "Nombre_Namespace" run "Nombre_Deploy" --image="Nombre_de_Imagen"`
+```
+kubectl -n "Nombre_Namespace" run "Nombre_Deploy" --image="Nombre_de_Imagen"
+```
 
 Si no se indican la cantidad de replicas, creará un Pod por deploy.
 
