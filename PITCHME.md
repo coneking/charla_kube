@@ -155,14 +155,12 @@ Ayudas de comando kubectl [Kubectl Cheat Sheet](https://kubernetes.io/docs/refer
 
 ## Práctica 2
 
-- Playbook (deshabilitar swap, reconfigura grub, elimina lv).
-
-+++
-@title[Práctica3]
-
-## Práctica 3
-
-- Playbook (reconfigurar hostname, /etc/resolv.conf).
+- Crear un archivo tipo Service para balanceo de pods. |
+  - selector: |
+    - app: nginx |
+    - clase: dia-7 |
+  - Puerto: 80 |
+  - Targetport: 80 |
 
 ---
 @title[Gracias]
