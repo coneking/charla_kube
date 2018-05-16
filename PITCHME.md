@@ -58,6 +58,7 @@ spec:
 @title[Deployment2]
 
 ## Crear deployment línea de comando
+<br>
 
 ```
 kubectl -n "Nombre_Namespace" run "Nombre_Deploy" --image="Nombre_de_Imagen"
@@ -122,6 +123,7 @@ spec:
 @title[Service2]
 
 ## Crear service línea de comando
+<br>
 
 ```
 kubectl -n "Nombre_Namespace" create service "Tipo_servicio" "Nombre_service" --tcp=[port]:[target]
