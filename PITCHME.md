@@ -40,38 +40,14 @@ spec:
 	  - containerPort: 80 ----> Puerto del contenedor
 ```
 
-
-### Requerimientos mínimos de hardware
-
-Nodo   | CPU      | Ram  | Disk (dev) | Disk (prod)
----    | ---      | ---  | ---        | ---
-etcd   | 1, 2 GHz | 1 GB | 8 GB       | 50 GB
-master | 1, 2 GHz | 2 GB | 8 GB       | 50 GB
-worker | 1, 2 GHz | 1 GB | 8 GB       | 200 GB
-
-
 ---
-@title[Plan_etcd]
+@title[Deployment2]
 
-### Plan para nodos etcd
+Otra forma de realizar un deployment es a través de línea de comando:
 
+`kubectl -n "Nombre_Namespace" run "Nombre_Deploy" --image="Nombre_de_Imagen"`
 
-Nº Nodos | Descripción
----          | ---
-1        | Inseguro. Entornos de desarrollo
-3        | Soporta fallas en cualquier nodo
-5        | Soporta fallas en dos nodos
-7        | Soporta fallas en tres nodos
-
----
-@title[Plan_master]
-
-### Plan para nodos master
-
-Nº Nodos | Descripción
----      | --- 
-1        | Inseguro. Entornos de desarrollo
-2        | Soporta fallas en cualquier nodo
+Si no se indican la cantidad de replicas, creará un Pod por deploy.
 
 ---
 @title[Info_Planning]
