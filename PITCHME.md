@@ -15,6 +15,8 @@ kubectl create -f archivo.yaml
 +++
 @title[Ejemplo]
 
+## Flujo del despliegue
+
 <p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/dia7/images/deploy1.jpg" width="800" /></p>
 
 
@@ -55,13 +57,35 @@ spec:
 ---
 @title[Deployment2]
 
-Otra forma de crear un "deployment" es a través de línea de comando:
+## Crear deployment línea de comando
 
 ```
 kubectl -n "Nombre_Namespace" run "Nombre_Deploy" --image="Nombre_de_Imagen"
 ```
 <br>
 Si no se indica la cantidad de replicas, creará un Pod por deploy.
+
+---
+@title[Replicasets]
+
+## Replicasets
+
+La cantidad de "replicas" que se crearán dependerá de la configuración del deployment.
+Estas replicas se distribuirán en el cluster automáticamente.
+
++++
+@title[Ejemplo1]
+
+## Failover Automático
+
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/dia7/images/replica1.jpg" width="800" /></p>
+
++++
+@title[Ejemplo2]
+
+## Balanceo de replicas
+
+<p align="center"><img src="https://raw.githubusercontent.com/coneking/charla_kube/dia7/images/replica2.jpg" width="800" /></p>
 
 ---
 @title[Service]
@@ -97,17 +121,13 @@ spec:
 ---
 @title[Service2]
 
-Otra forma de crear un recurso "service" es a través de línea de comando:
+## Crear service línea de comando
 
 ```
 kubectl -n "Nombre_Namespace" create service "Tipo_servicio" "Nombre_service" --tcp=[port]:[target]
 ```
 <br>
 Posteriormente se debe editar para hacer coincidir con los pods que necesita balancear.
-
----
-@title[Replicasets]
-
 
 ---
 @title[Información]
