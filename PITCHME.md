@@ -162,6 +162,17 @@ Ayudas de comando kubectl [Kubectl Cheat Sheet](https://kubernetes.io/docs/refer
   - Puerto: 80 |
   - Targetport: 80 |
 
++++
+@title[Práctica3]
+
+## Práctica 3
+
+- Revisar estado de Pods, Replicasets, Deployment y Service. |
+- Crear Port-forward de Pod. |
+  - Ingresar vía web a pod. |
+- Exponer Kubernetes mediante proxy. |
+- Ingresar vía web al service. |
+
 ---
 @title[Gracias]
 
