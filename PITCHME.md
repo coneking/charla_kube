@@ -144,7 +144,7 @@ Ayudas de comando kubectl [Kubectl Cheat Sheet](https://kubernetes.io/docs/refer
 - Crear un archivo tipo Deploy para nginx. |
   - labels: |
     - app: nginx |
-    - clase: dia-7 |
+    - clase: dia7 |
   - Replicas: 2 |
   - Contenedor: nginx:1.7.9 |
   - containerPort: 80 |
@@ -158,7 +158,7 @@ Ayudas de comando kubectl [Kubectl Cheat Sheet](https://kubernetes.io/docs/refer
 - Crear un archivo tipo Service para balanceo de pods. |
   - selector: |
     - app: nginx |
-    - clase: dia-7 |
+    - clase: dia7 |
   - Puerto: 80 |
   - Targetport: 80 |
 
