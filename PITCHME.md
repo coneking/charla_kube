@@ -161,7 +161,7 @@ Ayudas de comando kubectl [Kubectl Cheat Sheet](https://kubernetes.io/docs/refer
     - clase: dia7 |
   - Puerto: 80 |
   - Targetport: 80 |
-
+- Generar el recurso service con el archivo previamente creado. |
 +++
 @title[Práctica3]
 
